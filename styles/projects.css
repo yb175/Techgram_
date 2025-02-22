@@ -1,0 +1,197 @@
+/* Projects Page Styles */
+
+/* Layout */
+.app-container {
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    min-height: 100vh;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Main Content Styles */
+.main-content {
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+/* Header and Search Bar */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--bg-primary);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    margin-left: 0.5rem;
+    color: var(--text-primary);
+}
+
+.share-project-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Content Tabs */
+.content-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.tab-btn.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Project Feed */
+.project-feed {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Project Card */
+.project-card {
+    background: var(--bg-primary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-details h3 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.user-details span {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-info h4 {
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.project-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.suggested-developers {
+    margin-bottom: 2rem;
+}
+
+.suggested-developers h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.developer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.developer-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.developer-info h4 {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.developer-info span {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.follow-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
