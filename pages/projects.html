@@ -3,234 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - TechGram</title>
+    <title>Techgram - Projects</title>
     <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
-    <!-- Animated background elements -->
-    <div class="cyber-grid"></div>
-    <div class="glow-overlay"></div>
-
-    <nav class="navbar neo-header">
-        <div class="header-blur-bg"></div>
-        <div class="nav-content">
-            <div class="nav-brand">
-                <a href="../index.html" class="cyber-brand">
-                    TECHGRAM
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <a href="../index.html" class="nav-logo">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
                 </a>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore</span>
+                    </a>
+                    <a href="projects.html" class="nav-item active">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Saved</span>
+                    </a>
+                    <a href="github.html" class="nav-item">
+                        <i class="fab fa-github"></i>
+                        <span>Github</span>
+                    </a>
+                </nav>
             </div>
-            <div class="nav-links">
-                <a href="../index.html" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a>
-                <a href="projects.html" class="nav-link active"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
-                <a href="#" class="nav-link"><i class="fas fa-book"></i> <span>Docs</span></a>
-                <a href="github.html" class="nav-link"><i class="fab fa-github"></i> <span>GitHub</span></a>
-                <button class="theme-toggle neo-button">
-                    <i class="fas fa-sun"></i>
+
+            <div class="sidebar-bottom">
+                <div class="trending-tags">
+                    <h3>Trending Tags</h3>
+                    <div class="tag-list">
+                        <a href="#" class="tag-item">#javascript</a>
+                        <a href="#" class="tag-item">#react</a>
+                        <a href="#" class="tag-item">#webdev</a>
+                        <a href="#" class="tag-item">#python</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Bar -->
+            <div class="header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search projects, developers, or tags...">
+                </div>
+                <button class="share-project-btn">
+                    <i class="fas fa-plus"></i>
                 </button>
-            </div>
-        </div>
-        <div class="header-pattern"></div>
-    </nav>
-
-    <main class="container">
-        <div class="search-section">
-            <h1 class="main-title">Discover Amazing <span class="highlight">Projects</span></h1>
-            <div class="search-container">
-                <div class="search-wrapper">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" class="search-input" placeholder="Search for projects...">
-                    <div class="search-border"></div>
+                <div class="user-menu">
+                    <img src="../assets/profile-placeholder.jpg" alt="Profile" class="profile-img">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="filter-container">
-                    <button class="filter-button">
-                        <span class="filter-text">Filters</span>
-                        <div class="filter-icon-wrapper">
-                            <i class="fas fa-sliders-h"></i>
+            </div>
+
+            <!-- Content Tabs -->
+            <div class="content-tabs">
+                <button class="tab-btn active">Following</button>
+                <button class="tab-btn">Trending</button>
+                <button class="tab-btn">Latest</button>
+            </div>
+
+            <!-- Project Feed -->
+            <div class="project-feed">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=John+Dev&background=random" alt="John Dev" class="user-avatar">
+                            <div class="user-details">
+                                <h3>John Dev</h3>
+                                <span>@johndev</span>
+                            </div>
                         </div>
-                    </button>
-                    <button class="filter-button">
-                        <span class="filter-text">Category</span>
-                        <div class="filter-icon-wrapper">
-                            <i class="fas fa-chevron-down"></i>
+                        <button class="more-options">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="project-content">
+                        <img src="../assets/project-preview.jpg" alt="Project Preview" class="project-image">
+                        <div class="project-info">
+                            <h4>JBI-NEWS-APP</h4>
+                            <p>This is simply a news app which keeps you updated with the latest news and not only that but also provides you with the best news reading experience.</p>
                         </div>
-                    </button>
-                    <button class="filter-button">
-                        <span class="filter-text">Sort</span>
-                        <div class="filter-icon-wrapper">
-                            <i class="fas fa-sort"></i>
+                    </div>
+                    <div class="card-actions">
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span>245</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span>18</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span>Save</span>
+                            </button>
                         </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <div class="project-header">
-                        <h3>JBI-NEWS-APP</h3>
-                        <img src="https://ui-avatars.com/api/?name=John+Dev&background=random" alt="User" class="user-avatar">
+                        <button class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
                     </div>
-                    <p class="project-description">This is simply a news app which keeps you updated with the latest news and not only that but also provides you with the best news reading experience.</p>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Dev&background=random" alt="Sarah Dev" class="user-avatar">
+                            <div class="user-details">
+                                <h3>Sarah Dev</h3>
+                                <span>@sarahdev</span>
+                            </div>
+                        </div>
+                        <button class="more-options">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="project-content">
+                        <img src="../assets/project-preview.jpg" alt="Project Preview" class="project-image">
+                        <div class="project-info">
+                            <h4>NEWSLETTER</h4>
+                            <p>Hey! Here is the newsletter project, you can use it!</p>
+                        </div>
+                    </div>
                     <div class="card-actions">
-                        <a href="#" class="action-link">GitHub →</a>
-                        <a href="#" class="action-link">More →</a>
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span>245</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span>18</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        <button class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <div class="project-header">
-                        <h3>NEWSLETTER</h3>
-                        <img src="https://ui-avatars.com/api/?name=Sarah+Dev&background=random" alt="User" class="user-avatar">
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=Mike+Dev&background=random" alt="Mike Dev" class="user-avatar">
+                            <div class="user-details">
+                                <h3>Mike Dev</h3>
+                                <span>@mikedev</span>
+                            </div>
+                        </div>
+                        <button class="more-options">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
-                    <p class="project-description">Hey! Here is the newsletter project, you can use it!</p>
+                    <div class="project-content">
+                        <img src="../assets/project-preview.jpg" alt="Project Preview" class="project-image">
+                        <div class="project-info">
+                            <h4>web music player</h4>
+                            <p>online web music player just like spotify</p>
+                        </div>
+                    </div>
                     <div class="card-actions">
-                        <a href="#" class="action-link">GitHub →</a>
-                        <a href="#" class="action-link">More →</a>
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span>245</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span>18</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        <button class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <div class="project-header">
-                        <h3>web music player</h3>
-                        <img src="https://ui-avatars.com/api/?name=Mike+Dev&background=random" alt="User" class="user-avatar">
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Dev&background=random" alt="Alex Dev" class="user-avatar">
+                            <div class="user-details">
+                                <h3>Alex Dev</h3>
+                                <span>@alexdev</span>
+                            </div>
+                        </div>
+                        <button class="more-options">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
-                    <p class="project-description">online web music player just like spotify</p>
+                    <div class="project-content">
+                        <img src="../assets/project-preview.jpg" alt="Project Preview" class="project-image">
+                        <div class="project-info">
+                            <h4>To-do list</h4>
+                            <p>This project is a to-do list, where users can add new items, in different lists, strike-out completed items and delete items.</p>
+                        </div>
+                    </div>
                     <div class="card-actions">
-                        <a href="#" class="action-link">GitHub →</a>
-                        <a href="#" class="action-link">More →</a>
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span>245</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span>18</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        <button class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project Card 4 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <div class="project-header">
-                        <h3>To-do list</h3>
-                        <img src="https://ui-avatars.com/api/?name=Alex+Dev&background=random" alt="User" class="user-avatar">
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=Emma+Dev&background=random" alt="Emma Dev" class="user-avatar">
+                            <div class="user-details">
+                                <h3>Emma Dev</h3>
+                                <span>@emmdev</span>
+                            </div>
+                        </div>
+                        <button class="more-options">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
-                    <p class="project-description">This project is a to-do list, where users can add new items, in different lists, strike-out completed items and delete items.</p>
+                    <div class="project-content">
+                        <img src="../assets/project-preview.jpg" alt="Project Preview" class="project-image">
+                        <div class="project-info">
+                            <h4>Google Keeper Clone</h4>
+                            <p>This is a clone of google keeper app. It is a note taking app where you can add, delete and update notes.</p>
+                        </div>
+                    </div>
                     <div class="card-actions">
-                        <a href="#" class="action-link">GitHub →</a>
-                        <a href="#" class="action-link">More →</a>
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span>245</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span>18</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        <button class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project Card 5 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <div class="project-header">
-                        <h3>Google Keeper Clone</h3>
-                        <img src="https://ui-avatars.com/api/?name=Emma+Dev&background=random" alt="User" class="user-avatar">
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=James+Dev&background=random" alt="James Dev" class="user-avatar">
+                            <div class="user-details">
+                                <h3>James Dev</h3>
+                                <span>@jamesdev</span>
+                            </div>
+                        </div>
+                        <button class="more-options">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
-                    <p class="project-description">This is a clone of google keeper app. It is a note taking app where you can add, delete and update notes.</p>
+                    <div class="project-content">
+                        <img src="../assets/project-preview.jpg" alt="Project Preview" class="project-image">
+                        <div class="project-info">
+                            <h4>Video Call Web App</h4>
+                            <p>This is the Video Calling Application made using WebRTC, Features of the site is secure video calling.</p>
+                        </div>
+                    </div>
                     <div class="card-actions">
-                        <a href="#" class="action-link">GitHub →</a>
-                        <a href="#" class="action-link">More →</a>
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span>245</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span>18</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        <button class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Share</span>
+                        </button>
                     </div>
                 </div>
             </div>
+        </main>
 
-            <!-- Project Card 6 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <div class="project-header">
-                        <h3>Video Call Web App</h3>
-                        <img src="https://ui-avatars.com/api/?name=James+Dev&background=random" alt="User" class="user-avatar">
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="suggested-developers">
+                <h3>Suggested Developers</h3>
+                <div class="developer-item">
+                    <img src="../assets/profile-placeholder.jpg" alt="Alex Morgan" class="dev-avatar">
+                    <div class="dev-info">
+                        <h4>Alex Morgan</h4>
+                        <p>Full Stack Developer</p>
                     </div>
-                    <p class="project-description">This is the Video Calling Application made using WebRTC, Features of the site is secure video calling.</p>
-                    <div class="card-actions">
-                        <a href="#" class="action-link">GitHub →</a>
-                        <a href="#" class="action-link">More →</a>
+                    <button class="follow-btn">Follow</button>
+                </div>
+            </div>
+
+            <div class="upcoming-events">
+                <h3>Upcoming Events</h3>
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="date">23</span>
+                        <span class="month">Feb</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>React Conf 2025</h4>
+                        <p>Virtual • 2:00 PM</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </aside>
+    </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">TECHGRAM</div>
-                <p class="footer-tagline">Connecting developers, sharing innovations</p>
-            </div>
-            
-            <div class="footer-links">
-                <div class="footer-section">
-                    <h4>Platform</h4>
-                    <a href="#">About</a>
-                    <a href="#">Features</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Documentation</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Community</h4>
-                    <a href="#">GitHub</a>
-                    <a href="#">Discord</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Blog</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <a href="#">Help Center</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Contact</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-copyright">
-                <p>&copy; 2025 Techgram. All rights reserved.</p>
-            </div>
-            <div class="footer-social">
-                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Cyber grid background animation
-        function createCyberGrid() {
-            const grid = document.querySelector('.cyber-grid');
-            const gridSize = 20;
-            const rows = Math.ceil(window.innerHeight / gridSize);
-            const cols = Math.ceil(window.innerWidth / gridSize);
-
-            grid.innerHTML = '';
-            for (let i = 0; i < rows * cols; i++) {
-                const cell = document.createElement('div');
-                cell.className = 'grid-cell';
-                grid.appendChild(cell);
-            }
-        }
-
-        // Initialize animations
-        window.addEventListener('load', createCyberGrid);
-        window.addEventListener('resize', createCyberGrid);
-
-        // Theme toggle
-        document.querySelector('.theme-toggle').addEventListener('click', function() {
-            document.body.classList.toggle('dark-theme');
-            this.querySelector('i').classList.toggle('fa-sun');
-            this.querySelector('i').classList.toggle('fa-moon');
-        });
-    </script>
+    <script src="../scripts/interactions.js"></script>
 </body>
 </html>
