@@ -170,6 +170,312 @@
     opacity: 0.9;
 }
 
+.top-nav {
+    padding: 1.2rem 2rem;
+    background: rgba(var(--bg-secondary-rgb), 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.home-btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.home-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 28px;
+    background: #4a148c;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(74, 20, 140, 0.3),
+                0 0 35px rgba(74, 20, 140, 0.2),
+                0 0 50px rgba(74, 20, 140, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: glow 2s infinite;
+}
+
+.home-icon:hover {
+    transform: translateY(-2px);
+    background: #6a1b9a;
+    box-shadow: 0 0 25px rgba(74, 20, 140, 0.4),
+                0 0 45px rgba(74, 20, 140, 0.3),
+                0 0 65px rgba(74, 20, 140, 0.2);
+    animation: none;
+}
+
+.home-icon:active {
+    transform: translateY(0);
+    background: #4a148c;
+    box-shadow: 0 0 20px rgba(74, 20, 140, 0.3),
+                0 0 35px rgba(74, 20, 140, 0.2);
+}
+
+.home-icon i {
+    font-size: 1.1rem;
+    color: #e1bee7;
+}
+
+.home-icon span {
+    color: #e1bee7;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(74, 20, 140, 0.3),
+                    0 0 35px rgba(74, 20, 140, 0.2),
+                    0 0 50px rgba(74, 20, 140, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(74, 20, 140, 0.4),
+                    0 0 45px rgba(74, 20, 140, 0.3),
+                    0 0 65px rgba(74, 20, 140, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(74, 20, 140, 0.3),
+                    0 0 35px rgba(74, 20, 140, 0.2),
+                    0 0 50px rgba(74, 20, 140, 0.1);
+    }
+}
+
+.github-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.benefit-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    margin: 1rem 0;
+    color: var(--text-primary);
+}
+
+.benefit-card p {
+    color: var(--text-secondary);
+}
+
+.btn-github {
+    text-decoration: none;
+    display: inline-block;
+    border: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #24292e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-github:hover {
+    background: #2c3238;
+}
+
+.btn-github i {
+    font-size: 1.3rem;
+}
+
+.github-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.github-dashboard {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.welcome-container {
+    min-height: 80vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-primary);
+    gap: 2rem;
+}
+
+.welcome-container h1 {
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin: 0;
+    text-align: center;
+}
+
+.github-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px;
+}
+
+.btn-github {
+    background: #2ea44f;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(46, 164, 79, 0.2);
+}
+
+.btn-github:hover {
+    background: #2c974b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 164, 79, 0.3);
+}
+
+.btn-github i {
+    font-size: 1.3rem;
+}
+
+.btn-github .fa-arrow-right {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-github:hover .fa-arrow-right {
+    transform: translateX(4px);
+}
+
+/* Auth Overlay Styles */
+.auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.auth-content {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+.auth-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.auth-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Footer Styles */
+.footer {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-content a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-content a:hover {
+    color: var(--accent-color);
+}
+
+.footer-divider {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.social-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    background: var(--accent-color);
+}
+
+.social-link i {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
 @media (max-width: 768px) {
     .github-connect h1 {
         font-size: 2rem;
@@ -177,5 +483,28 @@
 
     .repo-filters {
         flex-direction: column;
+    }
+
+    .welcome-container h1 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .social-links {
+        margin-left: 0;
+        margin-top: 0.75rem;
     }
 }
