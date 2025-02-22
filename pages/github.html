@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Integration - TechGram</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/github.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">TechGram</a>
+        </div>
+        <div class="nav-links">
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="github.html" class="nav-link active">GitHub</a>
+            <a href="login.html" class="nav-link">Login</a>
+            <a href="signup.html" class="btn-primary">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="github-connect">
+            <h1>Connect Your GitHub</h1>
+            <p>Import your repositories and get AI-powered suggestions</p>
+            
+            <div class="github-features">
+                <div class="feature-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Import Repositories</h3>
+                    <p>Easily import and showcase your GitHub projects</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Analysis</h3>
+                    <p>Get smart suggestions to improve your code</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analytics</h3>
+                    <p>Track your project's engagement and growth</p>
+                </div>
+            </div>
+
+            <button id="connectGithub" class="github-btn">
+                <i class="fab fa-github"></i>
+                Connect GitHub Account
+            </button>
+        </div>
+
+        <div class="github-repos hidden" id="repoSection">
+            <h2>Your Repositories</h2>
+            <div class="repo-filters">
+                <input type="text" placeholder="Search repositories..." id="repoSearch">
+                <select id="repoFilter">
+                    <option value="all">All Repositories</option>
+                    <option value="public">Public Only</option>
+                    <option value="private">Private Only</option>
+                </select>
+            </div>
+
+            <div class="repo-grid" id="repoGrid">
+                <!-- Repositories will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechGram</h3>
+                <p>A platform for developers to showcase their projects</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/github.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - TechGram</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">TechGram</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search projects..." id="projectSearch">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="nav-links">
+            <a href="projects.html" class="nav-link active">Projects</a>
+            <a href="github.html" class="nav-link">GitHub</a>
+            <a href="login.html" class="nav-link">Login</a>
+            <a href="signup.html" class="btn-primary">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="projects-header">
+            <h1>Explore Projects</h1>
+            <div class="filter-section">
+                <select id="techFilter" class="filter-select">
+                    <option value="">All Technologies</option>
+                    <option value="react">React</option>
+                    <option value="node">Node.js</option>
+                    <option value="python">Python</option>
+                    <option value="blockchain">Blockchain</option>
+                </select>
+                <select id="sortBy" class="filter-select">
+                    <option value="recent">Most Recent</option>
+                    <option value="popular">Most Popular</option>
+                    <option value="trending">Trending</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+            <!-- Projects will be dynamically loaded here -->
+        </div>
+
+        <div class="load-more">
+            <button id="loadMoreBtn" class="btn-secondary">Load More Projects</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechGram</h3>
+                <p>A platform for developers to showcase their projects</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/projects.js"></script>
+</body>
+</html>
