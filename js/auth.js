@@ -9,83 +9,128 @@ document.querySelectorAll('.toggle-password').forEach(toggle => {
     });
 });
 
-// Handle login form submission
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-    loginForm.addEventListener('submit', handleLogin);
+// API endpoints
+const API_URL = '/api';
+
+// Utility functions
+function showError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+
+    const form = document.getElementById('loginForm');
+    const existingError = form.querySelector('.error-message');
+    if (existingError) {
+        existingError.remove();
+    }
+
+    form.insertBefore(errorDiv, form.firstChild);
+
+    // Remove error after 5 seconds
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000);
 }
 
-async function handleLogin(e) {
+function showSuccess(message) {
+    const successDiv = document.createElement('div');
+    successDiv.className = 'auth-success';
+    successDiv.textContent = message;
+
+    const form = document.querySelector('.auth-form');
+    form.insertBefore(successDiv, form.firstChild);
+
+    // Remove success message after 3 seconds
+    setTimeout(() => successDiv.remove(), 3000);
+}
+
+// Handle login form submission
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const remember = document.getElementById('remember').checked;
-
+    
     try {
-        // Here you would typically make an API call to your backend
-        const response = await mockLoginAPI(email, password);
+        const response = await fetch(`${API_URL}/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        });
+
+        const data = await response.json();
         
-        if (response.success) {
-            // Store user data
-            if (remember) {
-                localStorage.setItem('user', JSON.stringify(response.user));
-            } else {
-                sessionStorage.setItem('user', JSON.stringify(response.user));
-            }
+        if (response.ok) {
+            // Store token in localStorage (session persistence)
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
             
-            // Redirect to home page
+            // Redirect to main page
             window.location.href = '../index.html';
         } else {
-            showError('Invalid email or password');
+            // Handle login error
+            showError(data.message || 'Login failed. Please try again.');
         }
     } catch (error) {
-        showError('An error occurred. Please try again.');
+        showError('An error occurred. Please try again later.');
+        console.error('Login error:', error);
     }
-}
+});
 
 // Handle signup form submission
 const signupForm = document.getElementById('signupForm');
 if (signupForm) {
-    signupForm.addEventListener('submit', handleSignup);
-}
-
-async function handleSignup(e) {
-    e.preventDefault();
-    
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-    const terms = document.getElementById('terms').checked;
-
-    // Validate form
-    if (password !== confirmPassword) {
-        showError('Passwords do not match');
-        return;
-    }
-
-    if (!terms) {
-        showError('Please accept the terms and conditions');
-        return;
-    }
-
-    try {
-        // Here you would typically make an API call to your backend
-        const response = await mockSignupAPI(username, email, password);
+    signupForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
-        if (response.success) {
-            // Store user data
-            localStorage.setItem('user', JSON.stringify(response.user));
-            
-            // Redirect to home page
-            window.location.href = '../index.html';
-        } else {
-            showError(response.message);
+        const fullname = document.getElementById('fullname').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Validate passwords match
+        if (password !== confirmPassword) {
+            showError('Passwords do not match');
+            return;
         }
-    } catch (error) {
-        showError('An error occurred. Please try again.');
-    }
+
+        try {
+            const response = await fetch(`${API_URL}/signup`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    fullname,
+                    username,
+                    email,
+                    password
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Store token and user data
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                
+                // Redirect to main page
+                window.location.href = '../index.html';
+            } else {
+                showError(data.message || 'Signup failed. Please try again.');
+            }
+        } catch (error) {
+            showError('An error occurred. Please try again later.');
+            console.error('Signup error:', error);
+        }
+    });
 }
 
 // Handle social authentication
@@ -94,74 +139,56 @@ document.querySelectorAll('.social-btn').forEach(button => {
 });
 
 function handleSocialAuth(e) {
+    e.preventDefault();
     const provider = e.currentTarget.classList.contains('github') ? 'github' : 'google';
-    // Implement social authentication
-    console.log(`Authenticating with ${provider}`);
+    showError(`${provider} authentication coming soon!`);
 }
 
-// Mock API functions (replace these with real API calls)
-async function mockLoginAPI(email, password) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            // Simulate API response
-            resolve({
-                success: true,
-                user: {
-                    id: 1,
-                    username: 'testuser',
-                    email: email
-                }
-            });
-        }, 1000);
-    });
-}
-
-async function mockSignupAPI(username, email, password) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            // Simulate API response
-            resolve({
-                success: true,
-                user: {
-                    id: 1,
-                    username: username,
-                    email: email
-                }
-            });
-        }, 1000);
-    });
-}
-
-// Error handling
-function showError(message) {
-    // Create error element if it doesn't exist
-    let errorElement = document.querySelector('.auth-error');
-    if (!errorElement) {
-        errorElement = document.createElement('div');
-        errorElement.className = 'auth-error';
-        const form = document.querySelector('.auth-form');
-        form.insertBefore(errorElement, form.firstChild);
-    }
-    
-    errorElement.textContent = message;
-    errorElement.style.display = 'block';
-    
-    // Hide error after 3 seconds
-    setTimeout(() => {
-        errorElement.style.display = 'none';
-    }, 3000);
-}
-
-// Add error styles to auth.css
+// Add styles for error and success messages
 const style = document.createElement('style');
 style.textContent = `
+    .auth-error,
+    .auth-success {
+        padding: 12px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 0.9rem;
+        animation: slideDown 0.3s ease-out;
+    }
+
     .auth-error {
-        background-color: rgba(220, 38, 38, 0.1);
+        background-color: rgba(239, 68, 68, 0.1);
         color: #ef4444;
-        padding: 0.75rem;
-        border-radius: 5px;
-        margin-bottom: 1rem;
-        display: none;
+        border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .auth-success {
+        background-color: rgba(34, 197, 94, 0.1);
+        color: #22c55e;
+        border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .error-message {
+        padding: 12px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 0.9rem;
+        background-color: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 `;
 document.head.appendChild(style);
