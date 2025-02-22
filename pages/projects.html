@@ -6,75 +6,231 @@
     <title>Projects - TechGram</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
-    <nav class="navbar">
-        <div class="nav-brand">
-            <a href="../index.html">TechGram</a>
+    <!-- Animated background elements -->
+    <div class="cyber-grid"></div>
+    <div class="glow-overlay"></div>
+
+    <nav class="navbar neo-header">
+        <div class="header-blur-bg"></div>
+        <div class="nav-content">
+            <div class="nav-brand">
+                <a href="../index.html" class="cyber-brand">
+                    TECHGRAM
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a>
+                <a href="projects.html" class="nav-link active"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-book"></i> <span>Docs</span></a>
+                <a href="github.html" class="nav-link"><i class="fab fa-github"></i> <span>GitHub</span></a>
+                <button class="theme-toggle neo-button">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search projects..." id="projectSearch">
-            <i class="fas fa-search"></i>
-        </div>
-        <div class="nav-links">
-            <a href="projects.html" class="nav-link active">Projects</a>
-            <a href="github.html" class="nav-link">GitHub</a>
-            <a href="login.html" class="nav-link">Login</a>
-            <a href="signup.html" class="btn-primary">Sign Up</a>
-        </div>
+        <div class="header-pattern"></div>
     </nav>
 
     <main class="container">
-        <div class="projects-header">
-            <h1>Explore Projects</h1>
-            <div class="filter-section">
-                <select id="techFilter" class="filter-select">
-                    <option value="">All Technologies</option>
-                    <option value="react">React</option>
-                    <option value="node">Node.js</option>
-                    <option value="python">Python</option>
-                    <option value="blockchain">Blockchain</option>
-                </select>
-                <select id="sortBy" class="filter-select">
-                    <option value="recent">Most Recent</option>
-                    <option value="popular">Most Popular</option>
-                    <option value="trending">Trending</option>
-                </select>
+        <div class="search-section">
+            <h1 class="main-title">Discover Amazing <span class="highlight">Projects</span></h1>
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search for projects...">
+                    <div class="search-border"></div>
+                </div>
+                <div class="filter-container">
+                    <button class="filter-button">
+                        <span class="filter-text">Filters</span>
+                        <div class="filter-icon-wrapper">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                    </button>
+                    <button class="filter-button">
+                        <span class="filter-text">Category</span>
+                        <div class="filter-icon-wrapper">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <button class="filter-button">
+                        <span class="filter-text">Sort</span>
+                        <div class="filter-icon-wrapper">
+                            <i class="fas fa-sort"></i>
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="project-grid" id="projectGrid">
-            <!-- Projects will be dynamically loaded here -->
-        </div>
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="project-header">
+                        <h3>JBI-NEWS-APP</h3>
+                        <img src="https://ui-avatars.com/api/?name=John+Dev&background=random" alt="User" class="user-avatar">
+                    </div>
+                    <p class="project-description">This is simply a news app which keeps you updated with the latest news and not only that but also provides you with the best news reading experience.</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link">GitHub →</a>
+                        <a href="#" class="action-link">More →</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="load-more">
-            <button id="loadMoreBtn" class="btn-secondary">Load More Projects</button>
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="project-header">
+                        <h3>NEWSLETTER</h3>
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Dev&background=random" alt="User" class="user-avatar">
+                    </div>
+                    <p class="project-description">Hey! Here is the newsletter project, you can use it!</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link">GitHub →</a>
+                        <a href="#" class="action-link">More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="project-header">
+                        <h3>web music player</h3>
+                        <img src="https://ui-avatars.com/api/?name=Mike+Dev&background=random" alt="User" class="user-avatar">
+                    </div>
+                    <p class="project-description">online web music player just like spotify</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link">GitHub →</a>
+                        <a href="#" class="action-link">More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="project-header">
+                        <h3>To-do list</h3>
+                        <img src="https://ui-avatars.com/api/?name=Alex+Dev&background=random" alt="User" class="user-avatar">
+                    </div>
+                    <p class="project-description">This project is a to-do list, where users can add new items, in different lists, strike-out completed items and delete items.</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link">GitHub →</a>
+                        <a href="#" class="action-link">More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="project-header">
+                        <h3>Google Keeper Clone</h3>
+                        <img src="https://ui-avatars.com/api/?name=Emma+Dev&background=random" alt="User" class="user-avatar">
+                    </div>
+                    <p class="project-description">This is a clone of google keeper app. It is a note taking app where you can add, delete and update notes.</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link">GitHub →</a>
+                        <a href="#" class="action-link">More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 6 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <div class="project-header">
+                        <h3>Video Call Web App</h3>
+                        <img src="https://ui-avatars.com/api/?name=James+Dev&background=random" alt="User" class="user-avatar">
+                    </div>
+                    <p class="project-description">This is the Video Calling Application made using WebRTC, Features of the site is secure video calling.</p>
+                    <div class="card-actions">
+                        <a href="#" class="action-link">GitHub →</a>
+                        <a href="#" class="action-link">More →</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>TechGram</h3>
-                <p>A platform for developers to showcase their projects</p>
+            <div class="footer-brand">
+                <div class="footer-logo">TECHGRAM</div>
+                <p class="footer-tagline">Connecting developers, sharing innovations</p>
             </div>
-            <div class="footer-section">
-                <h3>Links</h3>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+            
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <a href="#">About</a>
+                    <a href="#">Features</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Documentation</a>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <a href="#">GitHub</a>
+                    <a href="#">Discord</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Blog</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Techgram. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
             </div>
         </div>
     </footer>
 
-    <script src="../js/projects.js"></script>
+    <script>
+        // Cyber grid background animation
+        function createCyberGrid() {
+            const grid = document.querySelector('.cyber-grid');
+            const gridSize = 20;
+            const rows = Math.ceil(window.innerHeight / gridSize);
+            const cols = Math.ceil(window.innerWidth / gridSize);
+
+            grid.innerHTML = '';
+            for (let i = 0; i < rows * cols; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'grid-cell';
+                grid.appendChild(cell);
+            }
+        }
+
+        // Initialize animations
+        window.addEventListener('load', createCyberGrid);
+        window.addEventListener('resize', createCyberGrid);
+
+        // Theme toggle
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+            this.querySelector('i').classList.toggle('fa-sun');
+            this.querySelector('i').classList.toggle('fa-moon');
+        });
+    </script>
 </body>
 </html>
