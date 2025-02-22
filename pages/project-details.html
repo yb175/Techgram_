@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - TechGram</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="../index.html" class="logo">TechGram</a>
+            </div>
+            <div class="nav-right">
+                <a href="../index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="github.html">GitHub</a>
+                <a href="login.html" class="btn-login">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="project-details">
+            <div class="project-header">
+                <div class="author-info">
+                    <img src="" alt="Author Avatar" class="avatar" id="authorAvatar">
+                    <div class="author-meta">
+                        <h2 id="authorName"></h2>
+                        <span class="post-time" id="postTime"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <h1 id="projectTitle"></h1>
+                <div class="project-preview">
+                    <img src="" alt="Project Preview" id="projectImage">
+                </div>
+                <div class="project-description">
+                    <p id="projectDescription"></p>
+                </div>
+                <div class="tech-stack" id="techStack">
+                    <!-- Tech stack tags will be added here -->
+                </div>
+                
+                <div class="project-metrics">
+                    <div class="metric">
+                        <i class="fas fa-heart"></i>
+                        <span id="likeCount">0</span>
+                    </div>
+                    <div class="metric">
+                        <i class="fas fa-comment"></i>
+                        <span id="commentCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-comments">
+                <h3>Comments</h3>
+                <div class="comment-form">
+                    <textarea placeholder="Add a comment..."></textarea>
+                    <button class="btn-primary">Post Comment</button>
+                </div>
+                <div class="comments-list" id="commentsList">
+                    <!-- Comments will be added here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechGram</h3>
+                <p>A platform for developers to showcase their projects</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/project-details.js"></script>
+</body>
+</html>
