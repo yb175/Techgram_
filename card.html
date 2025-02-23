@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Project - Techgram</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="card-form-container">
+        <div class="card-form">
+            <h2>Share Your Project</h2>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Project Description:</label>
+                    <textarea id="projectDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Project Image URL</label>
+                    <input type="url" id="imageUrl" placeholder="Enter the URL of your project image">
+                </div>
+                <div class="form-group">
+                    <label for="technologies">Technologies Used:</label>
+                    <input type="text" id="technologies" placeholder="e.g. HTML, CSS, JavaScript" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectLink">Project Link:</label>
+                    <input type="url" id="projectLink" placeholder="https://your-project.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="githubLink">GitHub Link:</label>
+                    <input type="url" id="githubLink" placeholder="https://github.com/your-repo" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Share Project</button>
+                    <a href="index.html" class="cancel-btn">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/card.js"></script>
+</body>
+</html>
