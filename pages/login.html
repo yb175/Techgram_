@@ -45,11 +45,11 @@
             </div>
 
             <div class="social-login">
-                <button class="social-button github">
+                <button class="social-button github" onclick="window.location.href='http://localhost:5000/auth/github'">
                     <i class="fab fa-github"></i>
                     Continue with GitHub
                 </button>
-                <button class="social-button google">
+                <button class="social-button google" onclick="window.location.href='http://localhost:5000/auth/google'">
                     <i class="fab fa-google"></i>
                     Continue with Google
                 </button>
@@ -78,9 +78,35 @@
             button.style.animation = 'pulse 0.3s';
             setTimeout(() => {
                 button.style.animation = '';
-                // Add your form submission logic here
+                handleEmailLogin();
             }, 300);
         });
+
+        // Handle email/password login
+        async function handleEmailLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                const response = await fetch('http://localhost:5000/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                    credentials: 'include'
+                });
+
+                if (response.ok) {
+                    window.location.href = '/index.html';
+                } else {
+                    alert('Login failed. Please check your credentials.');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('An error occurred during login. Please try again.');
+            }
+        }
     </script>
 </body>
 </html>
