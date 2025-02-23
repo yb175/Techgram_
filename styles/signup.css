@@ -20,7 +20,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: rgba(255, 255, 255, 0.1);
+    background: #121212;
 }
 
 /* Signup card */
@@ -30,7 +30,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 32px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
 }
 
 /* Signup header */
