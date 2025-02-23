@@ -483,6 +483,7 @@ body {
 }
 
 .project-card {
+    padding:10px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -3516,4 +3517,56 @@ body {
     color: var(--accent-primary);
     border-color: var(--accent-primary);
     background-color: rgba(139, 92, 246, 0.1);
+}
+
+.social-metrics {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+}
+
+.metric-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.metric-btn:hover {
+    color: var(--text);
+}
+
+.metric-btn:hover i.fa-comment {
+    color: #1DA1F2;
+}
+
+.metric-btn:hover i.fa-retweet {
+    color: #00BA7C;
+}
+
+.metric-btn:hover i.fa-heart {
+    color: #F91880;
+}
+
+.metric-btn:hover i.fa-chart-bar {
+    color: #1DA1F2;
+}
+
+.metric-btn:hover i.fa-share {
+    color: #1DA1F2;
+}
+
+.metric-btn i {
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.metric-btn span {
+    font-size: 0.9rem;
 }
