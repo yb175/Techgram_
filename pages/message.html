@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message - TechGram</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/message.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="message-dialog">
+        <div class="message-header">
+            <div class="user-info">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAXHDWDsMtv9vnLd3Sm9DPnIw0a6X5ZhU5gQ&s" alt="John Dev" class="user-avatar">
+                <div class="user-details">
+                    <h3>John Dev</h3>
+                    <span class="status online">Online</span>
+                </div>
+            </div>
+            <button class="close-btn" onclick="closeMessageDialog()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="message-content">
+            <div class="messages" id="messageContainer">
+                <!-- Messages will be added here -->
+            </div>
+            <div class="message-input">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" placeholder="Type your message...">
+                    <div class="input-actions">
+                        <button class="attach-btn">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="emoji-btn">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="send-btn" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closeMessageDialog() {
+            window.close();
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const messageContainer = document.getElementById('messageContainer');
+            const message = messageInput.value.trim();
+
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'message sent';
+                messageElement.innerHTML = `
+                    <div class="message-bubble">
+                        <p>${message}</p>
+                        <span class="time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                    </div>
+                `;
+                messageContainer.appendChild(messageElement);
+                messageInput.value = '';
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+            }
+        }
+
+        // Handle Enter key press
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

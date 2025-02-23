@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBI-NEWS-APP - Project Details</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/projectdetail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="project-container">
+        <!-- Navigation Section -->
+        <nav class="project-nav">
+            <div class="nav-left">
+                <a href="projects.html" class="back-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <button class="share-btn">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAXHDWDsMtv9vnLd3Sm9DPnIw0a6X5ZhU5gQ&s" alt="John Dev">
+            </div>
+            <div class="profile-info">
+                <h2 class="username">@johndev</h2>
+                <p class="bio">Full-stack developer passionate about creating intuitive and engaging user experiences. Specializing in React and Node.js development with a focus on news and media applications.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="profile-actions">
+                    <button class="action-box more-projects-box">
+                        <i class="fas fa-folder-open"></i>
+                        <span>More Projects</span>
+                    </button>
+                    <button class="action-box message-box" onclick="openMessageDialog()">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Message</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Details Section -->
+        <div class="project-details">
+            <h1 class="project-title">JBI-NEWS-APP</h1>
+            <p class="project-description">This is simply a news app which keeps you updated with the latest news and not only that but also provides you with the best news reading experience.</p>
+            
+            <!-- Project Image Section -->
+            <div class="project-image-section">
+                <img src="../assets/project-preview.jpg" alt="JBI News App Screenshot" class="project-image">
+            </div>
+
+            <!-- Project Info Grid -->
+            <div class="project-info-grid">
+                <div class="info-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Tech Stack</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React Native</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">News API</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-link"></i>
+                    <h3>Project Links</h3>
+                    <div class="project-links">
+                        <a href="#" class="project-link live-demo">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link source-code">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-list-check"></i>
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>Real-time News Updates</li>
+                        <li>Customizable News Categories</li>
+                        <li>Offline Reading Mode</li>
+                        <li>Bookmark Favorite Articles</li>
+                        <li>Share News Articles</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Project Stats</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <span class="stat-value">245</span>
+                            <span class="stat-label">Likes</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">18</span>
+                            <span class="stat-label">Comments</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">10K+</span>
+                            <span class="stat-label">Downloads</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openMessageDialog() {
+            window.open('message.html', 'MessageDialog', 
+                'width=440,height=640,resizable=no,scrollbars=no,status=no,location=no,menubar=no,toolbar=no');
+        }
+    </script>
+</body>
+</html>
