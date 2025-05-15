@@ -484,7 +484,7 @@ body {
 
 .project-card {
     padding:10px;
-    background: var(--surface);
+    background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     transition: transform 0.2s ease, border-color 0.2s ease;
@@ -614,7 +614,7 @@ body {
 .dark-theme .cyber-title {
     background: linear-gradient(to right, var(--accent), var(--primary));
     -webkit-background-clip: text;
-    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .dark-theme .neon-text {

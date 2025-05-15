@@ -25,7 +25,7 @@ function createForm() {
         const description = document.getElementById('description').value;
 
         let projectCard = document.createElement('article');
-        projectCard.className = `projectCard`;
+        projectCard.className = `project-card`;
         projectCard.innerHTML = `
             <div class="card-header">
                             <div class="author">
@@ -50,16 +50,16 @@ function createForm() {
                                 <span class="tech-tag">Firebase</span>
                                 <span class="tech-tag">WebRTC</span>
                             </div>
-                            <div class="social-metrics">
+                            <div class="social-metrics comment">
                                 <button class="metric-btn">
                                     <i class="far fa-comment"></i>
                                     <span>0</span>
                                 </button>
-                                <button class="metric-btn">
+                                <button class="metric-btn retweet">
                                     <i class="fas fa-retweet"></i>
                                     <span>0</span>
                                 </button>
-                                <button class="metric-btn">
+                                <button class="metric-btn like">
                                     <i class="far fa-heart"></i>
                                     <span>0</span>
                                 </button>
@@ -67,9 +67,10 @@ function createForm() {
                                     <i class="fas fa-chart-bar"></i>
                                     <span>243</span>
                                 </button>
-                                <button class="metric-btn">
+                                <button class="metric-btn share">
                                     <i class="fas fa-share"></i>
                                 </button>
+                                
                             </div>
         
         `
@@ -237,8 +238,25 @@ shareProject.addEventListener('click', (event) => {
     // Append the overlay and form to the body
     document.body.appendChild(overlay);
     document.body.appendChild(form);
-
-
 });
 
-
+const grid = document.querySelector('.project-grid');
+grid.addEventListener('click',(event)=>{
+    const like = event.target.closest('.like');
+    if(!like) return ;
+    const icon = like.querySelector('i');
+    const span = like.querySelector('span');
+    let count = Number(span.textContent);
+    if(icon.classList.contains('far')){
+        icon.classList.remove('far');
+        icon.classList.add('fas');
+        icon.style.color = 'red';
+        span.textContent = `${count+1}`;
+    }
+    else{
+        icon.classList.remove('fas');
+        icon.classList.add('far');
+        icon.style.color = '';
+        span.textContent = `${count-1}`;
+    }
+})
