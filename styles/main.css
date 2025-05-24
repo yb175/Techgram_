@@ -178,7 +178,7 @@ body {
 /* Enhanced Futuristic Search Section */
 .search-section {
     text-align: center;
-    margin: 4rem 0;
+    margin: 6rem 0;
     padding: 2rem;
     position: relative;
     background: linear-gradient(180deg, 
@@ -253,7 +253,7 @@ body {
 }
 
 .search-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     padding: 2rem;
@@ -300,6 +300,7 @@ body {
     backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 1px;
+    /* margin-left: 2vw; */
 }
 
 .search-input::placeholder {
